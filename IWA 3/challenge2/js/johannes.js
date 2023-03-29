@@ -1,8 +1,11 @@
-// johannes.js
+/**
+* I changed data types from Public and Private to Const
+* role was not not exported
+*/
 
 const firstname = "Johannes"
 const surname = "Potgieter"
-const role = "Intern"
+export const roleJ = "Intern"
 
-const display= firstname + " " + surname + " (" + role + ")"
+const display= firstname + " " + surname + " (" + roleJ + ")"
 document.querySelector('#johannes').innerText = display
