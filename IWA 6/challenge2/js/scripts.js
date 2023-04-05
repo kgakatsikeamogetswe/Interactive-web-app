@@ -7,12 +7,12 @@ const hourOfDay = 0;
 const minuteOfDay = 0;
 
 // Only change below this line
-
+//had to fix my arguements inside my condition and use equality operator
 if (hourOfDay == 0 && minuteOfDay == 0){
-const taxAsDecimal = parseInt(tax) / parseInt('100') ;
+const taxAsDecimal = parseInt(tax) / parseInt('100')/*changed string to number*/ ;
 const startingAfterTax = salary -(salary * taxAsDecimal);
 const balance =  (startingAfterTax - transport - food - rent);
 
-console.log(balance.toFixed(2))
+console.log(balance.toFixed(2))//remove 3 with 2
 }
 	
