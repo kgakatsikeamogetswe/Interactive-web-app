@@ -1,3 +1,3 @@
-const value = "3"
+const value = 3;
 
-console.log(`${2*value + 4}`)
+console.log(`${value + 4 + value}`)
