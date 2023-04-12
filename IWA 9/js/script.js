@@ -30,8 +30,8 @@ const rent = {
 
 // You can change below however you want
 
-const taxAsDecimal = parseInt(tax[913]) / 100
-const startingAfterTax = salary - (salary * taxAsDecimal)
-const type = parseInt(rent['large-apartment'])
-const balance = startingAfterTax - (expenses.transport + expenses.food + type) 
+const taxAsDecimal = parseInt(tax[913]) / 100//parsed my values to parseInt, And called my value using square bracket
+const startingAfterTax = salary - (salary * taxAsDecimal)//I multipled TaxAsDecimal with salary and subtracted it with salary so i could get StartingAfterTax
+const type = (rent['large-apartment'])//I assiegned type to rent object and called large-apartment from rent object using square bracket 
+const balance = startingAfterTax - (expenses.transport + expenses.food + type)//may brackets were used, They did not subtract the StartingAfterTax with expensess and type
 console.log(balance.toFixed(2))

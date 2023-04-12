@@ -13,6 +13,12 @@ const sarahPostal = '0310'
 
 // Only change below this line
 
+
+/**
+ * They used equal signs instead of colon
+ * In the address object they did not use colon 
+ * I change my accesss_id to string beceasue it was containing charectors and numbers
+ */
 const leo = {
 	name : leoName,
 	balance : leoBalance,
@@ -21,10 +27,13 @@ const leo = {
 	address : {
 		number : leoNumber,
 		street : leoStreet,
-		postalCode : leoPostal,
+		postalCode : leoPostal,//Changed kebab-case to cameCase
 	}
 }
 
+/**
+ * They used equal signs instead of colon
+ */
 const sarah = {
 	name : sarahName + sarahSurname,
 	age : 62,
