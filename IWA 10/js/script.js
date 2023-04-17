@@ -49,8 +49,9 @@ const holidays = {
 const christmas = 6
 const futureId = 9
 // Do not change code above this comment
-console.log(`ID ${futureId} not created yet`)
-console.log('')
+console.log(`ID ${futureId} not created yet`)//delete holidays.futureId.name
+
+//Fixed copied object
 const copied = {
     correctName: 'X-Mas',
     correctID: holidays[6].id,
@@ -58,10 +59,13 @@ const copied = {
     correctDates: holidays[6].date.setMinutes(0),
     correctDatess: new Date(holidays[6].date)
 }
-//console.log(holidays)
+
+//check if the date is earlier or not
 const isEarlier = (copied.correctDate > holidays[6].date)
 console.log('New date is earlier:', isEarlier)
 console.log('')
+
+//If the date is earlier, it check the following and updates
 if (isEarlier === true) {
     console.log('ID change:', holidays[6].id != copied.correctID)
     console.log('Name change:', copied.correctName)
@@ -71,9 +75,11 @@ if (isEarlier === true) {
     console.log(`Date change: ${days}/${months}/${years}`)
 }
 console.log('')
+
+//Gives me an output of min date from holidays object
 const firstHolidayTimestamp = Math.min(
     parseInt(holidays[0].date),
-    holidays[1].date,
+    holidays[1].date,//removed getTime with date
     holidays[2].date,
     holidays[3].date,
     holidays[4].date,
@@ -82,9 +88,11 @@ const firstHolidayTimestamp = Math.min(
     holidays[7].date,
     holidays[8].date,
 )
+
+//Gives me an output of max date from holidays object
 const lastHolidayTimestamp = Math.max(
     parseInt(holidays[0].date),
-    holidays[1].date,
+    holidays[1].date,//removed getTime with date
     holidays[2].date,
     holidays[3].date,
     holidays[4].date,
@@ -93,6 +101,7 @@ const lastHolidayTimestamp = Math.max(
     holidays[7].date,
     holidays[8].date,
 );
+
 const firstDay = new Date(firstHolidayTimestamp).getDate()
 const firstMonth = new Date(firstHolidayTimestamp).getMonth() + 1
 const lastDay = new Date(lastHolidayTimestamp).getDate()
@@ -100,6 +109,8 @@ const lastMonth = new Date(lastHolidayTimestamp).getMonth() + 1
 console.log(`0${firstDay}/0${firstMonth}/${(new Date(2030, 0, 9).getFullYear())}`)
 console.log(`${lastDay}/${lastMonth}/${(new Date(2030, 0, 9).getFullYear())}`)
 console.log('')
+
+//When refreshing page gives any random holiday
 const randomIndex = Math.floor(Math.random() * Object.keys(holidays).length);
 const randomHoliday = holidays[randomIndex].name;
 console.log(randomHoliday)
