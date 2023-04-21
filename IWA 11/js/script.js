@@ -5,7 +5,7 @@ const donutsOne = orderOne.getAttribute('data-donuts')
 const pancakesOne = orderOne.getAttribute('data-pancakes')
 const statusOne = orderOne.getAttribute('data-delivered')
 
-document.querySelector('.biscuits .count', '.donuts .count').innerText = biscuitOne
+document.querySelector('.biscuits .count').innerText = biscuitOne
 document.querySelector('.donuts .count').innerText = donutsOne
 document.querySelector('.pancakes .count').innerText = pancakesOne
 document.querySelector('.status dd').innerText = statusOne

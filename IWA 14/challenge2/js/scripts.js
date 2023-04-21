@@ -1,15 +1,11 @@
-function add (a, b) {
-  return a + b
-  }
+const add = (a, b) => a + b;
 
-function multiply (a, b) {
- return a * b 
- }
+const multiply = (a, b)=> a * b;
 
 function internal() {
-add = this.add(this.internal.a, this.internal.b)
-multiply = this.multiply(add, this.internal.c)
-console.log(multiply)
+added = this.add(this.internal.a, this.internal.b)
+multiplyed = this.multiply(added, this.internal.c)
+console.log(multiplyed)
 }
 
 // Not allowed to change below this
@@ -35,8 +31,19 @@ add,
 multiply,
 calculate: internal
 }
+const example3 = {
+  internal: {
+   a: 12,
+   b: 7,
+   c: 5,
+  },
+  add,
+  multiply,
+  calculate: internal
+  }
 
 
 
 example1.calculate()
 example2.calculate()
+example3.calculate()

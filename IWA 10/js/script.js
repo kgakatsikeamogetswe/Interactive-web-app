@@ -33,7 +33,7 @@ const holidays = {
     6: {
         id: 6,
         name: 'Christmas Day',
-        date: new Date(`25 December ${currentYear} 13:25`),
+        date: new Date(`25 December ${currentYear}`),
     },
     7: {
         id: 7,
