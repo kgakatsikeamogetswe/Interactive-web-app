@@ -59,41 +59,65 @@ const data = {
     },
   },
 };
+
+
 // Only edit below this comment
+// Define a function called createHtml that takes an argument called athlete
 const createHtml = (athlete) => {
-  //  reassign the variables
+
+  // Reassign the following variables from data object, using the athlete argument to access the correct index
   const firstName = data.response.data[athlete].firstName;
   const surname = data.response.data[athlete].surname;
   const id = data.response.data[athlete].id;
-  const races = (data.response.data[athlete].races).length
-  const date = new Date(data.response.data[athlete].races[races-1].date)
+  const races = (data.response.data[athlete].races).length;
+  const date = new Date(data.response.data[athlete].races[races-1].date);
   const time = data.response.data[athlete].races[races-1].time;
+  
+  // Create a new document fragment
   const fragment = document.createDocumentFragment();
+
+  // Create a new h2 element and set its text content to the athlete's ID
   let title = document.createElement('h2');
-  title.textContent = id
+  title.textContent = id;
+  
+  // Append the h2 element to the fragment
   fragment.appendChild(title);
+
+  // Create a new definition list element
   const list = document.createElement('dl');
-  const day =  date.getDate()
+
+  // Get the day, month, and year from the date object
+  const day =  date.getDate();
   const month = MONTHS[date.getMonth()];
   const year = date.getFullYear();
-  console.log(month)
-  let sum = 0
+
+  // Calculate the total time by iterating through the time array and adding up all the values
+  let sum = 0;
   let i = 0;
   while ( i < time.length ) {
-    sum += time[i]
-    i++
+    sum += time[i];
+    i++;
   }
+
+  // Convert the total time to minutes and hours
   const minutes = sum % 60;
   const hours = (sum - minutes) / 60;
+
+  //display athlete's information in definition list
   list.innerHTML = /* html */ `
       <dt>Athlete: ${firstName +' '+ surname}</dt>
       <dt>Total Races: ${races}</dt>
       <dt>Event Date (Latest): ${day.toString().padStart(2, '0')+' '+ month +' '+ year}</dt>
       <dt>Total Time (Latest): ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}</dt>
     `;
+
+  // Append the definition list to the fragment
   fragment.appendChild(list);
+
+  // Return the document fragment
   return fragment;
 }
-// [NM372], [SV782] = data
+
+// Find the elements with data-athlete attributes, and append the createHtml function output to them
 document.querySelector('[data-athlete = "NM372"]').appendChild(createHtml('NM372'));
 document.querySelector('[data-athlete ="SV782"]').appendChild(createHtml('SV782'));
